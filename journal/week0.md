@@ -11,7 +11,7 @@
 - Budgets can also be set from the global region whereas billing alerts only in N. Virginia
 - Cost allocation tags can be used to monitor costs based on tags
 - AWS calculator uses a 730 hour month for estimated costs
-
+- You get 2 free budgets, any new budgets are $1
 
 ### Watched Ashish's Week 0 - Security Considerations
 - Done
@@ -24,6 +24,7 @@
 
 
 ### Create an Admin User
+- Done
 
 ### Use CloudShell
 
