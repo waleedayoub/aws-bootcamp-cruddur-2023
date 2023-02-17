@@ -55,6 +55,10 @@ aws --cli-auto-complete
 
 ### Generate AWS Credentials
 - Created one set of credentials for the main admin user
+- Setting environment variables for AWS credentials in gitpod:
+    - export AWS_ACCESS_KEY_ID=""
+    - export AWS_SECRET_ACCESS_KEY=""
+    - export AWS_DEFAULT_REGION=""
 
 ### Installed AWS CLI
 
