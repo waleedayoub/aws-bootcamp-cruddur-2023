@@ -56,10 +56,17 @@ aws --cli-auto-complete
 ### Generate AWS Credentials
 - Created one set of credentials for the main admin user
 - Setting environment variables for AWS credentials in gitpod:
-    - export AWS_ACCESS_KEY_ID=""
-    - export AWS_SECRET_ACCESS_KEY=""
-    - export AWS_DEFAULT_REGION=""
-
+```shell
+    export AWS_ACCESS_KEY_ID=""
+    export AWS_SECRET_ACCESS_KEY=""
+    export AWS_DEFAULT_REGION=""
+```
+- In order to persist these in gitpod's credentials storage, you need to prefix them with `gp env`
+```shell    
+    gp env AWS_ACCESS_KEY_ID=""
+    gp env AWS_SECRET_ACCESS_KEY=""
+    gp env AWS_DEFAULT_REGION=""
+```
 ### Installed AWS CLI
 
 ### Create a Billing Alarm
