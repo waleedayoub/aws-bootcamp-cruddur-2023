@@ -1,9 +1,26 @@
 # Week 0 — Billing and Architecture
 
+- NB.: I'll be putting notes as I learn in the respective sections organized by to do lists and homework, etc.
+
 ## Homework Checklist:
 
 ### Watched Week 0 - Live Streamed Video
-- Done
+- Installed all the pre-requisites and created a repo based on the cruddur template
+- Url to my github repo is here: https://github.com/waleedayoub/aws-bootcamp-cruddur-2023
+- The pre-reqs I installed or created accounts on are:
+    - Gitpod.io: https://gitpod.io/workspaces
+        - Signed up with github SSO
+    - Honeycomb.io: https://ui.honeycomb.io/waleed-personal/environments/test/send-data
+        - Signed up with google SSO
+    - Lucidapp
+    - Enabled github codespaces (as an alternative to gitpod)
+    - Updated my AWS account and went through all the steps (below) to create a new IAM user, etc.
+    - Momento: 
+    - I already have a bunch of custom domain names registered through dreamhost.com
+        - I'll be using mytrellis.club for this course
+    - Rollbar: https://app.rollbar.com/a/waleed.ayoub
+        - Signed up with github SSO
+- 
 
 ### Watched Chirag's Week 0 - Spend Considerations
 - You can create billing alerts (old model in cloudwatch) or budgets (native in the billing console)
@@ -24,11 +41,20 @@
 
 
 ### Create an Admin User
-- Done
+- I renamed the alias for the account to make it easier to sign-in
+- Console sign in link: https://aws-bootcamp-waleed.signin.aws.amazon.com/console
+- I went through and reset the password
 
 ### Use CloudShell
+- Learned how to launch it from the aws console directly
+- Played around with the auto-complete functionality, to turn that on, use:
+```shell
+aws --cli-auto-complete
+```
+- 
 
 ### Generate AWS Credentials
+- Created one set of credentials for the main admin user
 
 ### Installed AWS CLI
 
