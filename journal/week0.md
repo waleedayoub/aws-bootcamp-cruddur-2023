@@ -97,7 +97,7 @@ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output tex
 
 ### Create a Billing Alarm
 - Screenshot of billing alarm:
-![Billing alarm](./billingalarm.jpg)
+![Billing alarm](./billingalarm.png)
 
 ### Create a Budget
 - Screenshot of budget:
@@ -105,8 +105,11 @@ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output tex
 
 ## Homework Challenges
 ### Destroy your root account credentials, Set MFA, IAM role
+- I'm not sure how to destroy root account creds
+- MFA has been set up on both root and IAM roles / accounts
 
 ### Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue.
+- tbd
 
 ### Review all the questions of each pillars in the Well Architected Tool (No specialized lens)
 
@@ -119,5 +122,7 @@ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output tex
 ## Knowledge Challenges
 
 ### Security Quiz
+- quiz completed
 
 ### Pricing Quiz
+- quiz completed
