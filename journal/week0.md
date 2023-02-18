@@ -42,7 +42,8 @@
 
 ### Create an Admin User
 - I renamed the alias for the account to make it easier to sign-in
-- Console sign in link: https://aws-bootcamp-waleed.signin.aws.amazon.com/console
+    - alias is aws-bootcamp-waleed
+    - console sign in link: https://aws-bootcamp-waleed.signin.aws.amazon.com/console
 - I went through and reset the password
 
 ### Use CloudShell
@@ -51,7 +52,6 @@
 ```shell
 aws --cli-auto-complete
 ```
-- 
 
 ### Generate AWS Credentials
 - Created one set of credentials for the main admin user
@@ -68,6 +68,31 @@ aws --cli-auto-complete
     gp env AWS_DEFAULT_REGION=""
 ```
 ### Installed AWS CLI
+- AWS cli installed in both github and locally
+- In order to ensure aws cli is available every time I use the gitpod workspace, I needed to add a few things to the `.gitpod.yml`:
+```yaml
+tasks:
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
+```
+- In the above snippet, a few things:
+    - I can set the auto prompt to be partial
+    - It's just ensuring it downloads the cli and installs it
+    - The last line changes directory to the workspace based on an environment variable VS code uses
+
+- In order to get the Account_ID for my AWS account, I can use the following: `aws sts get-caller-identity --query Account --output text`
+- And then if I want to put this into an environment variable, I just add export and a $ sign:
+```shell
+export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text
+```
+- And then if I want gitpod to remember it, I just pass the `gp env` command
 
 ### Create a Billing Alarm
 - Screenshot of billing alarm:
