@@ -1,3 +1,8 @@
+# Homework
+
+![honeycomb cruddur dashboard](honeycomb-board.png)
+### 
+
 # Week 2 — Distributed Tracing
 
 - In order to get honeycomb to receive data from the backend, I had to hard code the API key in the docker-compose
