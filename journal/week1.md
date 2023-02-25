@@ -1,6 +1,25 @@
 # Week 1 — App Containerization
 
 ## Homework Checklist:
+### Watch How to Ask for Technical Help
+- Done, nothing to comment here
+
+### Watched Grading Homework Summaries
+- Done, this helped me understand a little better how to submit homework notes
+- Unfortunately, this week I didn't have time to do a lot of the homework beyond what was covered in the live stream
+
+### Watched Week 1 - Live Streamed Video
+- I made it through the whole video and was able to deploy the application
+
+### Remember to Commit Your Code
+### Watcked Chirag's Week 1 - Spending Considerations
+### Watched Ashish's Week 1 - Container Security Considerations
+### Containerize Application (Dockerfiles, Docker Compose)
+### Document the Notification Endpoint for the OpenAI Document
+### Write a Flask Backend Endpoint for Notifications
+### Write a React Page for Notifications
+### Run DynamoDB Local Container and ensure it works
+### Run Postgres Container and ensure it works
 
 ## Homework Challenges:
 ### Run the dockerfile CMD as an external script
