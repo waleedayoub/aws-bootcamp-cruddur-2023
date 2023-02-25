@@ -10,3 +10,5 @@ HONEYCOMB_API_KEY=WcriyNaMANM2VIOU9K2IrB
 ```docker
 OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 ```
+
+- In reading other people's comments in youtube, it looks like restarting the gitpod environment fixes that issue above for some reason
