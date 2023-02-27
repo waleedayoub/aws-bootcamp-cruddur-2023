@@ -1,3 +1,5 @@
+## Week 1 - App Containerization
+
 ## Week 2 - Distributed tracing
 
 - Get this key from the honeycomb ui

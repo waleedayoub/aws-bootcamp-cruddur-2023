@@ -12,10 +12,24 @@
 - I made it through the whole video and was able to deploy the application
 
 ### Remember to Commit Your Code
+- I've been committing my code all along!
+
 ### Watcked Chirag's Week 1 - Spending Considerations
+- Not yet
+
 ### Watched Ashish's Week 1 - Container Security Considerations
+- Not yet
+
 ### Containerize Application (Dockerfiles, Docker Compose)
+- Done during the live stream
+- Refer to a bunch of notes below at [[Scratch Notes]]
+
 ### Document the Notification Endpoint for the OpenAI Document
+- OpenAPI used to be called SwaggerUI and is a standard for documenting your API
+- You create a openapi-*.yml file where you document your api endpoint
+- With the extension in VSCode, you get a really pretty API endpoint visualization with sample code, etc.
+
+
 ### Write a Flask Backend Endpoint for Notifications
 ### Write a React Page for Notifications
 ### Run DynamoDB Local Container and ensure it works
