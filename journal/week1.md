@@ -33,10 +33,14 @@
     - Click on the 3 dots in the extension to add a new stub for the endpoint you're creating
     - Make sure you know what method it should accomplish (get, post, etc.)
     - The notification service is a get request that gets a feed of activities for all users I follow
-    - 
+- One of the things I did was also wrap the notifications service in a honeycomb trace and span so that it's available in my telemetry!
 
 ### Write a Flask Backend Endpoint for Notifications
+- Done
+
 ### Write a React Page for Notifications
+- Done
+
 ### Run DynamoDB Local Container and ensure it works
 ### Run Postgres Container and ensure it works
 
@@ -47,6 +51,9 @@
 ### Implement a healthcheck in the V3 Docker compose file
 ### Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
 ### Learn how to install Docker on your localmachine and get the same containers running outside of Gitpod / Codespaces
+- Done
+- This was easy and I'm running it on another dev machine in my house
+
 ### Launch an EC2 instance that has docker installed, and pull a container to demonstrate you can run your own docker processes. 
 
 
