@@ -28,7 +28,12 @@
 - OpenAPI used to be called SwaggerUI and is a standard for documenting your API
 - You create a openapi-*.yml file where you document your api endpoint
 - With the extension in VSCode, you get a really pretty API endpoint visualization with sample code, etc.
-
+- In order to add a new endpoint, the formula is fairly easy:
+    - Make sure you have an openapi*.yml file created (the vscode extension gives you a tool to create that)
+    - Click on the 3 dots in the extension to add a new stub for the endpoint you're creating
+    - Make sure you know what method it should accomplish (get, post, etc.)
+    - The notification service is a get request that gets a feed of activities for all users I follow
+    - 
 
 ### Write a Flask Backend Endpoint for Notifications
 ### Write a React Page for Notifications
