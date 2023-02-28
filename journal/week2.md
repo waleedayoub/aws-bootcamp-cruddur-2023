@@ -1,9 +1,24 @@
-# Homework
+# Week 2 — Distributed Tracing
+
+## Homework Checklist
+### Watch Week 2 Live-Stream Video
+### Watch Chirag Week 2 - Spending Considerations (Coming Soon)
+### Watched Ashish's Week 2 - Observability Security Considerations
+### Instrument Honeycomb with OTEL
+### Instrument AWS X-Ray
+### Configure custom logger to send to CloudWatch Logs
+### Integrate Rollbar and capture and error
+
+## Homework Challenges
+### Instrument Honeycomb for the frontend-application to observe network latency between frontend and backend[HARD]
+### Add custom instrumentation to Honeycomb to add more attributes eg. UserId, Add a custom span
+### Run custom queries in Honeycomb and save them later eg. Latency by UserID, Recent Traces
+
 
 ![honeycomb cruddur dashboard](honeycomb-board.png)
 ### 
 
-# Week 2 — Distributed Tracing
+## Notes
 
 - In order to get honeycomb to receive data from the backend, I had to hard code the API key in the docker-compose
 - For some reason, even though it was set in my gitpod environment:
