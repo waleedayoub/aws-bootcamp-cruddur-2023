@@ -42,13 +42,28 @@
 - Done
 
 ### Run DynamoDB Local Container and ensure it works
+- Done
+
 ### Run Postgres Container and ensure it works
+- Done
+- Added a healthcheck to the postgres container as well
+- See homework challenge below
 
 ## Homework Challenges:
 ### Run the dockerfile CMD as an external script
+- I'm not sure why this is desirable? Why not keep the CMD inside the Dockerfile?
+
 ### Push and tag a image to DockerHub (they have a free tier)
+- Done, see screenshot of dockerhub here: ![DockerHub](./dockerhub.jpg)
+
 ### Use multi-stage building for a Dockerfile build
+- I'm not sure what this is, will need to research
+
 ### Implement a healthcheck in the V3 Docker compose file
+- Implemented healthcheck for the postgres DB, not sure what V3 is referring to here
+- See healthcheck in my ../docker-compose.yml
+- Screenshot of it here ![health check for postgres db](./db_healthcheck.jpg)
+
 ### Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
 ### Learn how to install Docker on your localmachine and get the same containers running outside of Gitpod / Codespaces
 - Done
