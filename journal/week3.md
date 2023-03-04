@@ -29,4 +29,6 @@ REACT_APP_AWS_COGNITO_REGION
 REACT_APP_AWS_USER_POOLS_ID: We get this one from our AWS Cognito portal and is created when we create a user pool
 REACT_APP_CLIENT_ID: Similar to the above, we get this when we create an app in AWS Cognito
 ```
-- 
+
+### Step 4:
+- Conditionally show stuff when user logged in vs not logged in
