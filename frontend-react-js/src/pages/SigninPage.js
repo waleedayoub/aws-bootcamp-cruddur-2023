@@ -13,24 +13,22 @@ export default function SigninPage() {
   const [password, setPassword] = React.useState('');
   //const [errors, setErrors] = React.useState('');
 
-  const [cognitoErrors, setErrors] = React.useState('');
+  const [errors, setErrors] = React.useState('');
 
   const onsubmit = async (event) => {
     setErrors('')
     event.preventDefault();
-    try {
-      Auth.signIn(email, password)
-        .then(user => {
-          localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
-          window.location.href = "/"
-        })
-        .catch(err => { console.log('Error!', err) });
-    } catch (error) {
-      if (error.code == 'UserNotConfirmedException') {
-        window.location.href = "/confirm"
-      }
-      setErrors(error.message)
-    }
+    Auth.signIn(email, password)
+      .then(user => {
+        localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
+        window.location.href = "/"
+      })
+      .catch(error => {
+        if (error.code == 'UserNotConfirmedException') {
+          window.location.href = "/confirm"
+        }
+        setErrors(error.message)
+      });
     return false
   }
 
@@ -41,13 +39,10 @@ export default function SigninPage() {
     setPassword(event.target.value);
   }
 
-  let errors;
-  if (cognitoErrors) {
-    errors = <div className='errors'>{cognitoErrors}</div>;
+  let el_errors;
+  if (errors) {
+    el_errors = <div className='errors'>{errors}</div>;
   }
-
-  // just before submit component
-  { errors }
   /*
     const onsubmit = async (event) => {
       event.preventDefault();
@@ -104,7 +99,7 @@ export default function SigninPage() {
               />
             </div>
           </div>
-          {errors}
+          {el_errors}
           <div className='submit'>
             <Link to="/forgot" className="forgot-link">Forgot Password?</Link>
             <button type='submit'>Sign In</button>
