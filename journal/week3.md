@@ -9,8 +9,15 @@
 ### Implement Custom Signin Page
 - Started doing this during the weekly live stream but hit some issues
 - Here's the error I get:
-![accessToken error when logging in](./signinloginerror.jpg)
+![accessToken error](./signinloginerror.jpg)
+- By following the instructions in the youtube video, I ran the below and switched the user to Confirmed!
+```shell
+> aws cognito-idp admin-set-user-password --username cruddur-test --password XXXX --user-pool-id ca-central-1_xLaE4nSIV --permanent
+```
+- And it worked!!! I'm logged in
+
 ### Implement Custom Signup Page
+
 ### Implement Custom Confirmation Page
 ### Implement Custom Recovery Page
 ### Watch about different approaches to verifying JWTs

@@ -51,6 +51,10 @@
 - Learned how to launch it from the aws console directly
 - Played around with the auto-complete functionality, to turn that on, use:
 ```shell
+aws configure set cli_auto_prompt on-partial
+```
+this one doesn't seem to work anymore?
+```shell
 aws --cli-auto-complete
 ```
 
