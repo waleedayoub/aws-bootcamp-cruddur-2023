@@ -17,9 +17,14 @@
 - And it worked!!! I'm logged in
 
 ### Implement Custom Signup Page
+- Done
 
 ### Implement Custom Confirmation Page
+- Done
+
 ### Implement Custom Recovery Page
+- Done
+
 ### Watch about different approaches to verifying JWTs
 
 ## Homework challenges
