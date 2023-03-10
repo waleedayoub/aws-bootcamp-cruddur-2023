@@ -9,7 +9,7 @@
 ### Implement Custom Signin Page
 - Started doing this during the weekly live stream but hit some issues
 - Here's the error I get:
-
+![accessToken error when logging in](./signinloginerror.jpg)
 ### Implement Custom Signup Page
 ### Implement Custom Confirmation Page
 ### Implement Custom Recovery Page
