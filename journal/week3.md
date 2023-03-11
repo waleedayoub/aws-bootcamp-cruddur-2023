@@ -26,6 +26,8 @@
 - Done
 
 ### Watch about different approaches to verifying JWTs
+- Implementing the back-end portion of the access tokens
+- 
 
 ## Homework challenges
 ### [Medium] Decouple the JWT verify from the application code by writing a  Flask Middleware
