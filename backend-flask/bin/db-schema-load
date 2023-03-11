@@ -1,0 +1,24 @@
+#! /usr/bin/bash
+
+schema_path=$(realpath .)/db/schema.sql
+
+# echo "==> db-schema-load"
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-schema-load"
+printf "${CYAN}==> ${LABEL}${NO_COLOR}\n"
+
+# checking to see if the arg passed is prod and setting connection string
+if [ "$1" = "prod" ]; then
+    printf "${CYAN}==> using production connection url ${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${CYAN}==> using dev connection url ${NO_COLOR}\n"
+    CON_URL=$CONNECTION_URL
+fi
+
+# trim the databasename from the connection url before dropping it
+# NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+# psql $NO_DB_CONNECTION_URL -c "DROP DATABSE IF EXISTS cruddur;"
+
+psql $CON_URL cruddur < $schema_path
