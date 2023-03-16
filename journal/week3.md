@@ -27,6 +27,16 @@
 
 ### Watch about different approaches to verifying JWTs
 - Implementing the back-end portion of the access tokens
+- The point of this step is to protect our back end APIs using the same access pattern we implemented for the front end
+- In the [Sign in page](../frontend-react-js/src/pages/SigninPage.js), we store our access token in local storage like this:
+```js
+localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
+```
+- Now we need to use that access token to protect our API endpoints
+- So in our [Home feed page](../frontend-react-js/src/pages/HomeFeedPage.js) we are passing the endpoint from our back-end like this:
+```js
+const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
+```
 - 
 
 ## Homework challenges
