@@ -1,0 +1,27 @@
+#! /usr/bin/bash
+
+# echo "==> db-drop"
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-sessions"
+printf "${CYAN}==> ${LABEL}${NO_COLOR}\n"
+
+# trim the databasename from the connection url before dropping it
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+# psql $NO_DB_CONNECTION_URL -c "DROP DATABSE IF EXISTS cruddur;"
+
+if [ "$1" = "prod" ]; then
+    printf "${CYAN}==> using production connection url ${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${CYAN}==> using dev connection url ${NO_COLOR}\n"
+    CON_URL=$NO_DB_CONNECTION_URL
+fi
+
+psql $CON_URL -c "select pid as process_id, \
+       usename as user,  \
+       datname as db, \
+       client_addr, \
+       application_name as app,\
+       state \
+from pg_stat_activity;"
