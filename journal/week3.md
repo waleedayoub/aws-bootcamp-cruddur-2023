@@ -25,7 +25,7 @@
 ### Implement Custom Recovery Page
 - Done
 
-### Watch about different approaches to verifying JWTs
+### Verify JWT token server side
 - Implementing the back-end portion of the access tokens
 - The point of this step is to protect our back end APIs using the same access pattern we implemented for the front end
 - In the [Sign in page](../frontend-react-js/src/pages/SigninPage.js), we store our access token in local storage like this:
@@ -37,7 +37,38 @@ localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken
 ```js
 const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
 ```
-- 
+- So it took a while for me to follow along but I finally managed to get it to work ... sort of
+- I had to do a couple of things to make mine work:
+1. I needed the try section of the data_home() function to return something:
+```py
+@app.route("/api/activities/home", methods=["GET"])
+def data_home():
+  access_token = extract_access_token(request.headers)
+  try:
+    claims = cognito_jwt_token.verify(access_token)
+    # authenicatied request
+    app.logger.debug("authenicated")
+    app.logger.debug(claims)
+    app.logger.debug(claims['username'])
+    data = HomeActivities.run(cognito_user_id=claims['username'])
+    return data, 200
+  except TokenVerifyError as e:
+    # unauthenicatied request
+    app.logger.debug(e)
+    app.logger.debug("unauthenicated")
+    data = HomeActivities.run()
+    return data, 200
+```
+and;
+2. I'm getting a weird error in my inspect page on the actual website:
+```js
+CognitoUser {username: '3644ca83-bbf8-4f58-a6a8-94adde68c691', pool: CognitoUserPool, Session: null, client: Client, signInUserSession: CognitoUserSession, …}
+react-dom.development.js:86 Warning: Encountered two children with the same key, `248959df-3079-4947-b847-9e0892d1bab4`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+```
+- Although I think I know what's wrong with 2. The uuid is set the same for the stub we're adding in
+- Anyway, I'm calling this week done and moving on
+
+### Watch about different approaches to verifying JWTs 
 
 ## Homework challenges
 ### [Medium] Decouple the JWT verify from the application code by writing a  Flask Middleware
