@@ -1,5 +1,21 @@
 # Week 4 — Postgres and RDS
 
+
+## Homework checklist
+
+### Watched Ashish's Week 4 - Security Considerations	
+- Done and security quiz complete!
+- A lot of good info on securing RDS databases
+- Main things: don't make publicly available and whitelist IPs
+
+### Create RDS Postgres Instance	
+- 
+### Bash scripting for common database actions	
+### Install Postgres Driver in Backend Application	
+### Connect Gitpod to RDS Instance	
+### Create Congito Trigger to insert user into database	
+### Create new activities with a database insert	
+
 ## Lecture Notes
 - AWS Aurora vs AWS RDS Postgrs, which is better?
     - Depends on use case, RDS Posgres is way cheaper and I assume less fully featured?

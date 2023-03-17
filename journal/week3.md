@@ -69,6 +69,9 @@ react-dom.development.js:86 Warning: Encountered two children with the same key,
 - Anyway, I'm calling this week done and moving on
 
 ### Watch about different approaches to verifying JWTs 
+- Done
+- The architectural considerations were interesting
+- note to self: you should write that all down
 
 ## Homework challenges
 ### [Medium] Decouple the JWT verify from the application code by writing a  Flask Middleware
