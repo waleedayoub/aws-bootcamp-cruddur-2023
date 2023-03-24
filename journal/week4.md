@@ -46,6 +46,13 @@ aws ec2 modify-security-group-rules \
 ```
 
 ### Create Congito Trigger to insert user into database	
+- In this step, what we're doing is adding an entry to our cruddur.users table with the new user that was created
+- Since we're using Cognito for decentralized user authentication, we would need to tell cognito to do this after a user signs up on the main site
+- I assume this user will be added to our original cognito user pool called `cruddur-user-pool`
+- When creating the lambda in the AWS console, a few things to consider:
+  - you need to create an environment variable since the code in the lambda will refer to CONNECTION_URL
+  - in this case, it should be the production connection url
+
 ### Create new activities with a database insert	
 
 ## Lecture Notes
