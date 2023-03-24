@@ -23,8 +23,10 @@
 ### Install Postgres Driver in Backend Application	
 - This one was a HUGE pain in the ass to troublshoot
 - Mainly because I didn't realize docker wants the container name in the postgres connection string and NOT localhost or 127.0.0.1
+- I FINALLY MANAGED TO GET THIS TO WORK
 
 ### Connect Gitpod to RDS Instance	
+
 
 ### Create Congito Trigger to insert user into database	
 ### Create new activities with a database insert	
@@ -72,9 +74,8 @@ export CONNECTION_URL="postgresql://postgres:password@localhost:5432cruddur"
 BUT THIS:
 ```bash
 export CONNECTION_URL="postgresql://postgres:password@db:5432cruddur"
-```
 
-gp env CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"
+gp env CONNECTION_URL="postgresql://postgres:password@db:5432/cruddur"
 
 export PROD_CONNECTION_URL="postgresql://cruddurroot:Test1234!@cruddur-db-instance.cwfc17rhrksf.ca-central-1.rds.amazonaws.com:5432/cruddur"
 
