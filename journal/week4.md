@@ -9,10 +9,23 @@
 - Main things: don't make publicly available and whitelist IPs
 
 ### Create RDS Postgres Instance	
-- 
+- See the aws cli create command below for this
+
 ### Bash scripting for common database actions	
+- Created a whole bunch of database actions
+- The way this is organized is like so:
+- backend-flask/db has all the sql snippets
+  - These snippets are things like schema.sql, seed.sql, sql/activities/create.sql, etc.
+  - The point of these snippets is to create the various tables and in some cases, seed them with data
+- backend-flast/bin contains the various psql commands used to instantiate our database
+  - in some cases (like db-schema-load or db-seed), they are actually calling sql commands from backend-flask/db
+
 ### Install Postgres Driver in Backend Application	
+- This one was a HUGE pain in the ass to troublshoot
+- Mainly because I didn't realize docker wants the container name in the postgres connection string and NOT localhost or 127.0.0.1
+
 ### Connect Gitpod to RDS Instance	
+
 ### Create Congito Trigger to insert user into database	
 ### Create new activities with a database insert	
 
@@ -52,8 +65,14 @@ aws rds create-db-instance \
 
 ## Setting up environment variables for the database connections
 
+NOT THIS:
 ```bash
-export CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"
+export CONNECTION_URL="postgresql://postgres:password@localhost:5432cruddur"
+```
+BUT THIS:
+```bash
+export CONNECTION_URL="postgresql://postgres:password@db:5432cruddur"
+```
 
 gp env CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"
 
