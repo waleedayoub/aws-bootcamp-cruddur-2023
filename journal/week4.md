@@ -26,7 +26,24 @@
 - I FINALLY MANAGED TO GET THIS TO WORK
 
 ### Connect Gitpod to RDS Instance	
+- Add GITPOD_IP as an env var in GITPOD like this:
+```shell
+export GITPOD_IP=$(curl ifconfig.me)
+gp env GITPOD_IP=$(curl ifconfig.me)
+```
 
+```shell
+export DB_SG_ID="sg-0ec494ab10dc821bb"
+gp env DB_SG_ID="sg-0ec494ab10dc821bb"
+export DB_SG_RULE_ID="sgr-09d6436bccca0ab47"
+gp env DB_SG_RULE_ID="sgr-09d6436bccca0ab47"
+```
+
+```
+aws ec2 modify-security-group-rules \
+    --group-id $DB_SG_ID \
+    --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={Description=GITPOD,IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
+```
 
 ### Create Congito Trigger to insert user into database	
 ### Create new activities with a database insert	
@@ -77,9 +94,9 @@ export CONNECTION_URL="postgresql://postgres:password@db:5432cruddur"
 
 gp env CONNECTION_URL="postgresql://postgres:password@db:5432/cruddur"
 
-export PROD_CONNECTION_URL="postgresql://cruddurroot:Test1234!@cruddur-db-instance.cwfc17rhrksf.ca-central-1.rds.amazonaws.com:5432/cruddur"
+export PROD_CONNECTION_URL='postgresql://cruddurroot:Test1234!@cruddur-db-instance.cwfc17rhrksf.ca-central-1.rds.amazonaws.com:5432/cruddur'
 
-gp env PROD_CONNECTION_URL="postgresql://cruddurroot:Test1234!@cruddur-db-instance.cwfc17rhrksf.ca-central-1.rds.amazonaws.com:5432/cruddur"
+gp env PROD_CONNECTION_URL='postgresql://cruddurroot:Test1234!@cruddur-db-instance.cwfc17rhrksf.ca-central-1.rds.amazonaws.com:5432/cruddur'
 ```
 
 ## Creating tables in the dev postgres database
